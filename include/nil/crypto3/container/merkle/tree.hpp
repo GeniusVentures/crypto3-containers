@@ -396,12 +396,12 @@ namespace nil {
                     //
                     template<class... Args>
                     reference emplace_back(Args &&..._args) {
-                        return _hashes.template emplace_back(_args...);
+                        return _hashes.template emplace_back<>(_args...);
                     }
 
                     template<class... Args>
                     iterator emplace(const_iterator _position, Args &&... _args) {
-                        return _hashes.template emplace(_position, _args...);
+                        return _hashes.template emplace<>(_position, _args...);
                     }
 
                     void pop_back() {
